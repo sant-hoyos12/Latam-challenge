@@ -1,14 +1,14 @@
 from typing import List, Tuple
 import pandas as pd
 import datetime
-#file_path = "farmers-protest-tweets-2021-2-4.json"
+file_path = "farmers-protest-tweets-2021-2-4.json"
 
 
 #@profile   #se puede descomentar para correr la función en la terminal con python -m memory_profiler q1_time.py y ver el uso de memoria.
 
 def q1_time(file_path: str) -> List[Tuple[datetime.date, str]]:
     # Cargar el archivo JSON en un DataFrame de Pandas
-    #df = pd.read_json(file_path, lines=True)
+    df = pd.read_json(file_path, lines=True)
     
     # Extraer el 'username' de la columna 'user'
     df['username'] = df['user'].apply(lambda user: user['username'])
